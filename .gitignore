@@ -1,2 +1,4 @@
 Pipfile.lock
 *.pyc
+.yapviewstack
+log.yap

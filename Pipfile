@@ -13,6 +13,7 @@ jupyter = "*"
 pairlist = {path = "./../PairList"}
 networkx = "*"
 plotly = "*"
+yaplotlib = "*"
 
 [requires]
 python_version = "3.11"
