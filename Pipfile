@@ -9,6 +9,10 @@ matplotlib = "*"
 scipy = "*"
 
 [dev-packages]
+jupyter = "*"
+pairlist = {path = "./../PairList"}
+networkx = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.11"

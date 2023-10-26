@@ -16,7 +16,7 @@ def qlm(l, m, x, y, z):
     return scipy.special.sph_harm(m, l, phi, theta, out=None).mean()
 
 
-def boo(l, x, y, z):
+def boo(l: int, x: np.ndarray, y: np.ndarray, z: np.ndarray):
     """
     結合配向秩序指標
     """
