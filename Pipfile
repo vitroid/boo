@@ -14,6 +14,10 @@ pairlist = {path = "./../PairList"}
 networkx = "*"
 plotly = "*"
 yaplotlib = "*"
+genice2 = "*"
+scikit-learn = "*"
+pandas = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.11"
