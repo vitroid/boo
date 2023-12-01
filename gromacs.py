@@ -8,11 +8,16 @@ import numpy as np
 
 def read_gro(file):
     """
-    gromacsの.groファイルを読みこむ。
+    `read_gro` 関数は GROMACS .gro ファイルを読み取り、軌跡の各フレームを辞書として生成します。
 
-    あとで出力する場合にそなえ、できるだけデータをそのままの形で保持する。
+    Args:
+      file: `file` パラメータは、読み込む GRO ファイルを表すファイル オブジェクトです。 `read_gro` 関数に渡す前に、読み取りモードで開く必要があります。
+
+    Returns:
+      関数 `read_gro` は、ジェネレーターを作成するために `yield`
+    ステートメントを使用しています。この関数は、値を返す代わりに、ループの反復ごとに「frame」辞書を生成します。これにより、呼び出し元はすべてのフレームを一度に返すのではなく、フレームを 1
+    つずつ繰り返すことができます。
     """
-
     # 無限ループ
     while True:
         frame = {
@@ -73,7 +78,13 @@ def read_gro(file):
 
 def write_gro(frame, file, remark="Written by write_gro"):
     """
-    fileにframeを書きだす。
+    `write_gro` 関数は、分子動力学シミュレーションで一般的に使用される GRO 形式でフレームをファイルに書き込みます。
+
+    Args:
+      frame: 「frame」パラメータは、次のキーを含む辞書です。
+      file: `file` パラメータは、フレームが書き込まれるファイル オブジェクトです。 `write_gro` 関数を呼び出す前に、書き込みモードで開く必要があります。
+      remark: 「remark」パラメータは、出力ファイルの最初の行として書き込まれるメッセージまたはコメントを表す文字列です。これはオプションであり、デフォルト値は「Written by
+    write_gro」です。. Defaults to Written by write_gro
     """
 
     # frameを解体する
@@ -119,7 +130,15 @@ def write_gro(frame, file, remark="Written by write_gro"):
 
 
 def decompose(frame):
-    """read_gro3で読みこんだ原子列を、分子単位に切りわける。"""
+    """
+    関数「decompose」は原子位置のフレームを取得し、それらを残基 ID に基づいて分子に分離します。
+
+    Args:
+      frame: 「frame」パラメータは、分子システム内の原子に関する情報を含む辞書です。次のキーがあります。
+
+    Returns:
+      キーが残基の名前であり、値が分子のリストである辞書。各分子は、原子と位置のペアのリストとして表されます。
+    """
     Natom = frame["position"].shape[0]
     molecules = defaultdict(list)
     lastres = -1
@@ -142,6 +161,16 @@ def decompose(frame):
 
 
 def compose(mols, cell):
+    """
+    「compose」関数は、分子とその位置、およびセル サイズの辞書を受け取り、残基 ID、残基名、原子名、原子 ID、位置、およびセル サイズを含む辞書を返します。
+
+    Args:
+      mols: `mols` パラメータは、キーが分子の名前、値が原子のリストである辞書です。各原子は、原子名とその位置を含むタプルとして表されます。
+      cell: 「セル」パラメータは、分子が構成されるセルの寸法を表します。これは、セルの長さ、幅、高さをそれぞれ表す 3 つの値を含むリストまたはタプルです。
+
+    Returns:
+      次のキーと値を含む辞書:
+    """
     resi_id = []
     residue = []
     atom = []
