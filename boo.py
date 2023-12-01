@@ -85,6 +85,7 @@ if __name__ == "__main__":
         / 2**0.5
     )
 
+    # このコードは、さまざまな結晶構造の結合配向秩序パラメーター (BOO) の実部をプロットしています。
     samples = {"BCC": bcc, "SCL": scl, "Diamond": dia, "FCC": fcc}
     for label, vecs in samples.items():
         x, y, z = vecs.T
