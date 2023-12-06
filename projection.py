@@ -24,6 +24,24 @@ def equirectangular_grid(width=1000):
     return np.meshgrid(x, y)
 
 
+def polar(x,y,z)->tuple:
+    """
+    The function `polar` takes three input parameters `x`, `y`, and `z` and returns a tuple containing
+    the polar angles of the vector (x, y, z).
+    
+    Args:
+      x: The x-coordinate of the point in Cartesian coordinates.
+      y: The y-coordinate in a Cartesian coordinate system.
+      z: The parameter `z` represents the height or vertical component in a three-dimensional coordinate
+    system.
+    
+    Returns:
+      a tuple containing two values. The first value is the arctangent of y/x, and the second value is
+    the arctangent of z divided by the square root of (x^2 + y^2).
+    """
+    return np.arctan2(y,x), np.arctan2(z,(x**2+y**2)**0.5)
+
+
 def mollweide_grid(width=1000):
     """
     The function `mollweide_grid` returns the longitude `alpha` and latitude `delta` of a point on a

@@ -5,3 +5,5 @@
 *.trr
 *-last.gro
 mdout.mdp
+*-0.gro
+\#*

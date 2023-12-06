@@ -11,7 +11,6 @@ cif2ice = "*"
 
 [dev-packages]
 jupyter = "*"
-pairlist = {path = "./../PairList"}
 networkx = "*"
 plotly = "*"
 yaplotlib = "*"
@@ -21,6 +20,8 @@ pandas = "*"
 seaborn = "*"
 mdanalysis = "*"
 gemmi = "*"
+mdanalysistests = "*"
+pairlist = "*"
 
 [requires]
 python_version = "3.11"
