@@ -39,7 +39,7 @@ def polar(x,y,z)->tuple:
       a tuple containing two values. The first value is the arctangent of y/x, and the second value is
     the arctangent of z divided by the square root of (x^2 + y^2).
     """
-    return np.arctan2(y,x), np.arctan2(z,(x**2+y**2)**0.5)
+    return np.arctan2(y,x), np.arctan2((x**2+y**2)**0.5,z)
 
 
 def mollweide_grid(width=1000):
