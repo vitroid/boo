@@ -1,0 +1,7 @@
+*.cpt
+*.edr
+*.tpr
+*.log
+*.trr
+*-last.gro
+mdout.mdp
