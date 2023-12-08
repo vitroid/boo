@@ -6,8 +6,8 @@ integrator               = md
                                      
 ; MD steps and output control          
 dt                       = 0.001           
-nsteps                   = 100000         
-nstxout                  = 500         
+nsteps                   = 20000         
+nstxout                  = 100         
 nstvout                  = 10000        
 nstlog                   = 50           
 nstenergy                = 50        

@@ -1,0 +1,7 @@
+#include "CH4.itp"
+
+[ system ]
+methane
+
+[ molecules ]
+MET         567
