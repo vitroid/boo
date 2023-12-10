@@ -37,7 +37,7 @@ tau_t                    = 0.6
 ref_t                    = 300.0               
 
 ; Pressure coupling                         
-Pcoupl                   = berendsen                  
+Pcoupl                   = Parrinello-Rahman                  
 pcoupltype               = isotropic           
 tau_p                    = 15                      
 compressibility          = 4.5e-5
